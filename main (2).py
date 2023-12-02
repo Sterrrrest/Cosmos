@@ -63,6 +63,7 @@ if __name__ == '__main__':
   load_dotenv(find_dotenv())
   print(os.environ['NASA_TOKEN'])
   token = os.environ['NASA_TOKEN']
+
   nasa_earth('https://api.nasa.gov/EPIC/api/natural', token)
   apod('https://api.nasa.gov/planetary/apod', token)
   fetch_spacex_last_launch('https://api.spacexdata.com/v5/launches/5eb87d47ffd86e000604b38a')
