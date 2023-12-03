@@ -7,11 +7,7 @@ from dotenv import load_dotenv, find_dotenv
 from apod import apod
 
 bot = telebot.TeleBot(token='6557313479:AAG3rsv6DzLNigHmHKDN-MCVcJRxdimdMxo')
-# print(bot.get_me())
 updates = bot.get_updates()
-# print(random_foto)
-# bot.send_message(chat_id='@cosmopics', text="I'm sorry Dave I'm afraid I can't do that.")
-# bot.send_document(chat_id='@cosmopics', document=open((), 'rb'))
 parser = argparse.ArgumentParser(description='устанавливает нужный период отправки фото')
 parser.add_argument('--count', type=int, help='Ссылка на запуск')
 args = parser.parse_args()
