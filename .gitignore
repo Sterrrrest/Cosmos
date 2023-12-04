@@ -159,4 +159,7 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 
 .idea/
+.pictures/
+.pictures_nasa/
+.pictures_nasa_earth/
 
