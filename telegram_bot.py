@@ -3,31 +3,31 @@ import random
 import os
 import time
 import argparse
+
 from dotenv import load_dotenv, find_dotenv
-from apod import apod
+from fetch_spacex_images import main
+if __name__ == '__main__':
+        load_dotenv(find_dotenv())
+        token = os.environ['TG_TOKEN']
+        chat_id = os.environ['CHAT_ID']
+        bot = telebot.TeleBot(token=token)
+        updates = bot.get_updates()
+        parser = argparse.ArgumentParser(description='Отправляет скаченные фото в ТГ бота.'
+                                                     'В качестве аргумента надо задать период отправки')
+        parser.add_argument('--count', type=int, required=False, default=14400, help='Ссылка на запуск')
+        args = parser.parse_args()
 
-bot = telebot.TeleBot(token='6557313479:AAG3rsv6DzLNigHmHKDN-MCVcJRxdimdMxo')
-updates = bot.get_updates()
-parser = argparse.ArgumentParser(description='устанавливает нужный период отправки фото')
-parser.add_argument('--count', type=int, help='Ссылка на запуск')
-args = parser.parse_args()
+        dir = 'pictures'
+        number = []
+        pictdir = []
+        for docs in os.walk(dir):
+            pictdir.append(docs[2])
+            for directory_path_number, directory_path in enumerate(pictdir[0]):
+                number.append(directory_path_number)
+        while True:
+            random_foto = random.sample(pictdir[0], max(number))
 
-dir = 'pictures'
-number = []
-pictdir = []
-for docs in os.walk(dir):
-    pictdir.append(docs[2])
-    for i_number, i in enumerate(pictdir[0]):
-        number.append(i_number)
-while True:
-        list_random_foto = random.sample(pictdir[0], max(number))
-        print(list_random_foto)
-        for pic in list_random_foto:
-            bot.send_document(chat_id='@cosmopics', document=open(('pictures/'+pic), 'rb'))
-            if args.count:
-                time.sleep(args.count)
-            else:
-                time.sleep(14400)
-
-
-# print(type(timer))
+            for pic in random_foto:
+                with open(('pictures/' + pic), 'rb') as picture:
+                    bot.send_document(chat_id=chat_id, document=picture)
+                    time.sleep(args.count)
