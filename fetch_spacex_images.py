@@ -7,9 +7,6 @@ from dotenv import load_dotenv, find_dotenv
 from pathlib import Path
 from download_picture import download_picture
 
-def main():
-    Path("pictures").mkdir(parents=True, exist_ok=True)
-
 def fetch_spacex_last_launch(url):
     response = requests.get(url)
     response.raise_for_status()
@@ -19,6 +16,7 @@ def fetch_spacex_last_launch(url):
         print("File saved as spacex_{}.jpeg".format(picture_number))
 
 if __name__ == '__main__':
+    Path("pictures").mkdir(parents=True, exist_ok=True)
     load_dotenv(find_dotenv())
     token = os.environ['NASA_TOKEN']
     parser = argparse.ArgumentParser(description='Скачиввает фото с запусков space_X_images по id, '

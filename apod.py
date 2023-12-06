@@ -9,7 +9,6 @@ from get_extention import get_ext
 from download_picture import download_picture
 
 
-pics_random_number = 3
 def apod(url, token):
     payLoad = {'api_key': token,
                'count': 'pics_random_number'}
@@ -21,6 +20,7 @@ def apod(url, token):
       print("File saved as nasa_{}{}".format(pic_number, get_ext(pic['url'])))
 
 if __name__ == '__main__':
+    pics_random_number = 3
     Path("pictures_nasa").mkdir(parents=True, exist_ok=True)
     load_dotenv(find_dotenv())
     token = os.environ['NASA_TOKEN']

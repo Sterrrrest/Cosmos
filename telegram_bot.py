@@ -5,7 +5,7 @@ import time
 import argparse
 
 from dotenv import load_dotenv, find_dotenv
-from fetch_spacex_images import main
+
 if __name__ == '__main__':
         load_dotenv(find_dotenv())
         token = os.environ['TG_TOKEN']
