@@ -13,7 +13,7 @@ if __name__ == '__main__':
         bot = telebot.TeleBot(token=token)
         parser = argparse.ArgumentParser(description='Отправляет скаченные фото в ТГ бота.'
                                                      'В качестве аргумента надо задать период отправки')
-        parser.add_argument('--count', type=int, required=False, default=14400, help='Ссылка на запуск')
+        parser.add_argument('--count', type=int, required=False, default=14400, help='Укажите ID запуск')
         args = parser.parse_args()
 
         dir = 'pictures'
