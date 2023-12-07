@@ -8,9 +8,9 @@ from pathlib import Path
 from download_picture import download_picture
 
 
-def nasa_earth(foto_id, token):
+def nasa_earth(url, token):
     payLoad = {'api_key': token}
-    response = requests.get('https://api.nasa.gov/EPIC/api/natural' + foto_id, params=payLoad)
+    response = requests.get(url, params=payLoad)
     response.raise_for_status()
     for pic_number, pic in enumerate(response.json()):
       pic_name = pic['image']
@@ -25,10 +25,7 @@ if __name__ == '__main__':
   Path("pictures_nasa_earth").mkdir(parents=True, exist_ok=True)
   load_dotenv(find_dotenv())
   token = os.environ['NASA_TOKEN']
+  url = 'https://api.nasa.gov/EPIC/api/natural'
   parser = argparse.ArgumentParser(description='Скачивает фото Земли')
-  parser.add_argument('-l', '--x', help='Id фото')
   args = parser.parse_args()
-  if not args.link:
-    nasa_earth('https://api.nasa.gov/EPIC/api/natural', token)
-  else:
-    nasa_earth(args.x, token)
+  nasa_earth(url, token)
