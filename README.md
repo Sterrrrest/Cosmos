@@ -1,6 +1,6 @@
 Описание
 =
-Данный проект скачивает фото с сайтов NASA, Space-X
+Данный проект скачивает фото с сайтов NASA, Space-X.
 
 Установка
 =
@@ -10,11 +10,11 @@
 Переменные окружения
 =
 Для настройки переменных окружения нужно создать файл .env указать там переменную окружения с токеном ```NASA_TOKEN=токен```
-```TG_TOKEN=токен```
+```TG_TOKEN=токен```.
 
-Ключ API.  Ключ API NASA можно получить в кабинете  [Сайт NASA](https://api.nasa.gov/)
+Ключ API.  Ключ API NASA можно получить в кабинете  [Сайт NASA](https://api.nasa.gov/).
 
-Зарегистрировать бота и получить токен  [Как регистрировать бота](bit.ly/47ELQuZ)
+Зарегистрировать бота и получить токен  [Как регистрировать бота](bit.ly/47ELQuZ).
 
 
 Инструкция
@@ -35,11 +35,11 @@
 Примеры запуска скриптов
 =
 
-```$ python3 telegram_bot.py 50``` - задержка между публикациями 50 секунд
+```$ python3 telegram_bot.py 50``` - задержка между публикациями 50 секунд.
 
-```$ python3 apod.py https://api.nasa.gov/planetary/``` API_token - скачивание фото дня с сайта [NASA[(https://api.nasa.gov/)
+```$ python3 apod.py https://api.nasa.gov/planetary/``` API_token - скачивание фото дня с сайта [NASA[(https://api.nasa.gov/).
 
-```$ python3 fetch_spacex_images.py https://api.spacexdata.com/v5/launches/``` id запуска скачивает фото с запуска по Id
+```$ python3 fetch_spacex_images.py https://api.spacexdata.com/v5/launches/``` id запуска скачивает фото с запуска по Id.
 
-```$ python3 nasa_earth.py  https://api.nasa.gov/EPIC/archive/natural/2019/05/30/png/epic_1b_20190530011359.png?api``` API_Key скачивает фото Земли с сайта [NASA](https://api.nasa.gov/)
+```$ python3 nasa_earth.py  https://api.nasa.gov/EPIC/archive/natural/2019/05/30/png/epic_1b_20190530011359.png?api``` API_Key скачивает фото Земли с сайта [NASA](https://api.nasa.gov/).
 
