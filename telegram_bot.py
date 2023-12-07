@@ -11,7 +11,6 @@ if __name__ == '__main__':
         token = os.environ['TG_TOKEN']
         chat_id = os.environ['CHAT_ID']
         bot = telebot.TeleBot(token=token)
-        updates = bot.get_updates()
         parser = argparse.ArgumentParser(description='Отправляет скаченные фото в ТГ бота.'
                                                      'В качестве аргумента надо задать период отправки')
         parser.add_argument('--count', type=int, required=False, default=14400, help='Ссылка на запуск')

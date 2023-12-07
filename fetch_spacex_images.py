@@ -1,9 +1,7 @@
 import argparse
 import requests
-import os
 
 
-from dotenv import load_dotenv, find_dotenv
 from pathlib import Path
 from download_picture import download_picture
 
@@ -17,8 +15,6 @@ def fetch_spacex_last_launch(url):
 
 if __name__ == '__main__':
     Path("pictures").mkdir(parents=True, exist_ok=True)
-    load_dotenv(find_dotenv())
-    token = os.environ['NASA_TOKEN']
     parser = argparse.ArgumentParser(description='Скачиввает фото с запусков space_X_images по id, '
                                                  'если id нет, то фото послднего запуска')
     parser.add_argument('-l', '--link', required=False, default='https://api.spacexdata.com/v5/launches/latest', help='Id запуска')
