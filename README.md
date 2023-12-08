@@ -61,17 +61,17 @@ $ python3 telegram_bot.py 50
 Pадержка между публикациями 50 секунд.
 
 ```
-$ python3 apod.py https://api.nasa.gov/planetary/
+$ python3 apod.py
 ``` 
-API_token - скачивание фото дня с сайта [NASA[(https://api.nasa.gov/).
+Скачивает фото дня с сайта [NASA[(https://api.nasa.gov/).
 
 ```
-$ python3 fetch_spacex_images.py https://api.spacexdata.com/v5/launches/
+$ python3 fetch_spacex_images.py https://api.spacexdata.com/v5/launches/5eb87d47ffd86e000604b38a
 ``` 
-id запуска скачивает фото с запуска по Id.
+Скачивает фото запуска SpaceX по Id. В данном случае id запуска - ```5eb87d47ffd86e000604b38a```
 
 ```
-$ python3 nasa_earth.py  https://api.nasa.gov/EPIC/archive/natural/2019/05/30/png/epic_1b_20190530011359.png?api
+$ python3 nasa_earth.py
 ``` 
-API_Key скачивает фото Земли с сайта [NASA](https://api.nasa.gov/).
+Скачивает фото Земли с сайта [NASA](https://api.nasa.gov/).
 
