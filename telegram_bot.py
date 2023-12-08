@@ -29,4 +29,4 @@ if __name__ == '__main__':
             for pic in random_foto:
                 with open(('pictures/' + pic), 'rb') as picture:
                     bot.send_document(chat_id=chat_id, document=picture)
-                    time.sleep(args.count)
+                time.sleep(args.count)
