@@ -24,6 +24,4 @@ if __name__ == '__main__':
   load_dotenv(find_dotenv())
   token = os.environ['NASA_TOKEN']
   url = 'https://api.nasa.gov/EPIC/api/natural'
-  parser = argparse.ArgumentParser(description='Скачивает фото Земли')
-  args = parser.parse_args()
   nasa_earth(url, token)

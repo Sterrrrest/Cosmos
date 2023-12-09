@@ -1,6 +1,5 @@
 import requests
 import os
-import argparse
 
 
 from dotenv import load_dotenv, find_dotenv
@@ -26,5 +25,3 @@ if __name__ == '__main__':
     load_dotenv(find_dotenv())
     token = os.environ['NASA_TOKEN']
     apod(url, token)
-    parser = argparse.ArgumentParser(description='Скачиввает фото дня c сайта NASA')
-    args = parser.parse_args()
