@@ -8,7 +8,7 @@ from pathlib import Path
 from download_picture import download_picture
 
 
-def nasa_earth(token):
+def get_earth_picture(token):
     url = 'https://api.nasa.gov/EPIC/api/natural'
     payLoad = {'api_key': token}
     response = requests.get(url, params=payLoad)
@@ -24,4 +24,4 @@ if __name__ == '__main__':
   Path("pictures_nasa_earth").mkdir(parents=True, exist_ok=True)
   load_dotenv(find_dotenv())
   token = os.environ['NASA_TOKEN']
-  nasa_earth(token)
+  get_earth_picture(token)

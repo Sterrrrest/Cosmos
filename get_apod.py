@@ -8,7 +8,7 @@ from get_extention import get_ext
 from download_picture import download_picture
 
 
-def apod(token):
+def get_apod(token):
     url = 'https://api.nasa.gov/planetary/apod'
     payLoad = {'api_key': token}
     response = requests.get(url, params=payLoad)
@@ -22,4 +22,4 @@ if __name__ == '__main__':
     Path("pictures_nasa").mkdir(parents=True, exist_ok=True)
     load_dotenv(find_dotenv())
     token = os.environ['NASA_TOKEN']
-    apod(token)
+    get_apod(token)
