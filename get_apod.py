@@ -15,7 +15,7 @@ def get_apod(token):
     response.raise_for_status()
     for pic_number, pic in enumerate(response.json()):
       pic_address = pic['url']
-      picture_url = "'pictures_nasa/nasa_{}{}'.format(pic_number,get_ext(pic['url'])"
+      picture_url = 'pictures_nasa/nasa_{}{}'.format(pic_number, get_ext(pic['url']))
       download_picture(picture_url, pic_address, token)
       print("File saved as nasa_{}{}".format(pic_number, get_ext(pic['url'])))
 
