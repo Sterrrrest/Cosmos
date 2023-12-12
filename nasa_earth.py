@@ -16,8 +16,8 @@ def nasa_earth(token):
     for pic_number, pic in enumerate(response.json()):
       pic_name = pic['image']
       pic_date = pic['date'].split(' ')[0].replace('-', '/')
-      url_earth = 'https://api.nasa.gov/EPIC/archive/natural/{}/png/{}.png'.format(pic_date, pic_name)
-      download_picture('pictures_nasa_earth/earth_{}.png'.format(pic_number), url_earth, token)
+      final_url = 'https://api.nasa.gov/EPIC/archive/natural/{}/png/{}.png'.format(pic_date, pic_name)
+      download_picture('pictures_nasa_earth/earth_{}.png'.format(pic_number), final_url, token)
       print("File saved as earth_{}.png".format(pic_number))
 
 if __name__ == '__main__':
