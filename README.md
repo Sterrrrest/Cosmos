@@ -66,7 +66,7 @@ $ python3 apod.py
 Скачивает фото дня с сайта [NASA[(https://api.nasa.gov/).
 
 ```
-$ python3 fetch_spacex_images.py https://api.spacexdata.com/v5/launches/5eb87d47ffd86e000604b38a
+$ python3 fetch_spacex_images.py --id 5eb87d47ffd86e000604b38a
 ``` 
 Скачивает фото запуска SpaceX по Id. В данном случае id запуска - ```5eb87d47ffd86e000604b38a```
 
