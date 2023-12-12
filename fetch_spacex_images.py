@@ -20,5 +20,4 @@ if __name__ == '__main__':
                                                  'если id нет, то фото послднего запуска')
     parser.add_argument('--id', required=False, default='latest', help='Id запуска')
     args = parser.parse_args()
-    args.id = '5eb87d47ffd86e000604b38a'
     fetch_spacex_last_launch(args.id)
