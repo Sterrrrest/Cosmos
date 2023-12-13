@@ -23,6 +23,6 @@ if __name__ == '__main__':
             all_pictures.append(docs[2])
         while True:
             random_foto = random.choice(all_pictures[0])
-            with open(('pictures/' + random_foto), 'rb') as picture:
+            with open(('pictures/{}'.format(random_foto)), 'rb') as picture:
                 bot.send_document(chat_id=chat_id, document=picture)
             time.sleep(args.count)
